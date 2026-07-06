@@ -1,0 +1,291 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tjilla C150 instellen",
+        "description": "Voer de lokale verbindingsgegevens van je robotstofzuiger in. De Device ID en Local Key vind je via de Tuya IoT developer console of de TinyTuya wizard.",
+        "data": {
+          "host": "IP-adres van de stofzuiger",
+          "device_id": "Device ID",
+          "local_key": "Local key",
+          "name": "Naam in Home Assistant"
+        }
+      },
+      "room_count": {
+        "title": "Kamers",
+        "description": "Stel het aantal kamers in dat je stofzuiger heeft (of dat je wilt gebruiken). Op de volgende pagina voer je per kamer een ID en naam in. Zet op 0 om kamerselectie over te slaan.",
+        "data": {
+          "room_count": "Aantal kamers",
+          "scan_interval": "Update-interval (seconden)"
+        }
+      },
+      "room_details": {
+        "title": "Kamers benoemen",
+        "description": "Voer voor elk van de {count} kamers het kamer-ID in (zoals de robot die kent) en een naam. Laat de naam leeg voor een automatische naam (Kamer 1, Kamer 2, ...).",
+        "data": {
+          "room_id_0": "Kamer 1 — ID op de robot",
+          "room_name_0": "Kamer 1 — naam",
+          "room_id_1": "Kamer 2 — ID op de robot",
+          "room_name_1": "Kamer 2 — naam",
+          "room_id_2": "Kamer 3 — ID op de robot",
+          "room_name_2": "Kamer 3 — naam",
+          "room_id_3": "Kamer 4 — ID op de robot",
+          "room_name_3": "Kamer 4 — naam",
+          "room_id_4": "Kamer 5 — ID op de robot",
+          "room_name_4": "Kamer 5 — naam",
+          "room_id_5": "Kamer 6 — ID op de robot",
+          "room_name_5": "Kamer 6 — naam",
+          "room_id_6": "Kamer 7 — ID op de robot",
+          "room_name_6": "Kamer 7 — naam",
+          "room_id_7": "Kamer 8 — ID op de robot",
+          "room_name_7": "Kamer 8 — naam",
+          "room_id_8": "Kamer 9 — ID op de robot",
+          "room_name_8": "Kamer 9 — naam",
+          "room_id_9": "Kamer 10 — ID op de robot",
+          "room_name_9": "Kamer 10 — naam",
+          "room_id_10": "Kamer 11 — ID op de robot",
+          "room_name_10": "Kamer 11 — naam",
+          "room_id_11": "Kamer 12 — ID op de robot",
+          "room_name_11": "Kamer 12 — naam",
+          "room_id_12": "Kamer 13 — ID op de robot",
+          "room_name_12": "Kamer 13 — naam",
+          "room_id_13": "Kamer 14 — ID op de robot",
+          "room_name_13": "Kamer 14 — naam",
+          "room_id_14": "Kamer 15 — ID op de robot",
+          "room_name_14": "Kamer 15 — naam",
+          "room_id_15": "Kamer 16 — ID op de robot",
+          "room_name_15": "Kamer 16 — naam",
+          "room_id_16": "Kamer 17 — ID op de robot",
+          "room_name_16": "Kamer 17 — naam",
+          "room_id_17": "Kamer 18 — ID op de robot",
+          "room_name_17": "Kamer 18 — naam",
+          "room_id_18": "Kamer 19 — ID op de robot",
+          "room_name_18": "Kamer 19 — naam",
+          "room_id_19": "Kamer 20 — ID op de robot",
+          "room_name_19": "Kamer 20 — naam"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken met de stofzuiger. Controleer het IP-adres, Device ID en Local Key, en zorg dat de Smart Life-app gesloten is.",
+      "unknown": "Er is een onverwachte fout opgetreden. Check de logs voor details."
+    },
+    "abort": {
+      "already_configured": "Deze stofzuiger is al geconfigureerd."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Kamers & instellingen",
+        "description": "Stel het aantal kamers in dat je stofzuiger heeft (of dat je wilt gebruiken). Op de volgende pagina voer je per kamer een ID en naam in.",
+        "data": {
+          "room_count": "Aantal kamers",
+          "scan_interval": "Update-interval (seconden)"
+        }
+      },
+      "rooms": {
+        "title": "Kamers benoemen",
+        "description": "Voer voor elk van de {count} kamers het kamer-ID in (zoals de robot die kent) en een naam. Laat de naam leeg voor een automatische naam (Kamer 1, Kamer 2, ...).",
+        "data": {
+          "room_id_0": "Kamer 1 — ID op de robot",
+          "room_name_0": "Kamer 1 — naam",
+          "room_id_1": "Kamer 2 — ID op de robot",
+          "room_name_1": "Kamer 2 — naam",
+          "room_id_2": "Kamer 3 — ID op de robot",
+          "room_name_2": "Kamer 3 — naam",
+          "room_id_3": "Kamer 4 — ID op de robot",
+          "room_name_3": "Kamer 4 — naam",
+          "room_id_4": "Kamer 5 — ID op de robot",
+          "room_name_4": "Kamer 5 — naam",
+          "room_id_5": "Kamer 6 — ID op de robot",
+          "room_name_5": "Kamer 6 — naam",
+          "room_id_6": "Kamer 7 — ID op de robot",
+          "room_name_6": "Kamer 7 — naam",
+          "room_id_7": "Kamer 8 — ID op de robot",
+          "room_name_7": "Kamer 8 — naam",
+          "room_id_8": "Kamer 9 — ID op de robot",
+          "room_name_8": "Kamer 9 — naam",
+          "room_id_9": "Kamer 10 — ID op de robot",
+          "room_name_9": "Kamer 10 — naam",
+          "room_id_10": "Kamer 11 — ID op de robot",
+          "room_name_10": "Kamer 11 — naam",
+          "room_id_11": "Kamer 12 — ID op de robot",
+          "room_name_11": "Kamer 12 — naam",
+          "room_id_12": "Kamer 13 — ID op de robot",
+          "room_name_12": "Kamer 13 — naam",
+          "room_id_13": "Kamer 14 — ID op de robot",
+          "room_name_13": "Kamer 14 — naam",
+          "room_id_14": "Kamer 15 — ID op de robot",
+          "room_name_14": "Kamer 15 — naam",
+          "room_id_15": "Kamer 16 — ID op de robot",
+          "room_name_15": "Kamer 16 — naam",
+          "room_id_16": "Kamer 17 — ID op de robot",
+          "room_name_16": "Kamer 17 — naam",
+          "room_id_17": "Kamer 18 — ID op de robot",
+          "room_name_17": "Kamer 18 — naam",
+          "room_id_18": "Kamer 19 — ID op de robot",
+          "room_name_18": "Kamer 19 — naam",
+          "room_id_19": "Kamer 20 — ID op de robot",
+          "room_name_19": "Kamer 20 — naam"
+        }
+      }
+    }
+  },
+  "issues": {
+    "device_offline": {
+      "title": "Tjilla C150 ({device_name}) is offline",
+      "description": "De stofzuiger op {host} is meer dan 5 minuten niet bereikbaar.\n\nMogelijke oorzaken:\n- IP-adres is veranderd (DHCP-reservering aanmaken in router)\n- Stofzuiger heeft geen stroom of staat in een dock zonder voeding\n- WiFi-verbinding is verloren\n- Router heeft het apparaat geblokkeerd\n\nDe integratie probeert automatisch opnieuw te verbinden. Bevestig hieronder dat je het probleem hebt onderzocht.",
+      "fix_flow": {
+        "step": {
+          "device_offline": {
+            "title": "Verbinding hersteld?",
+            "description": "Klik op 'Indienen' als de stofzuiger weer bereikbaar is. De waarschuwing verdwijnt automatisch zodra een succesvolle verbinding is gemaakt."
+          }
+        }
+      }
+    },
+    "auth_failed": {
+      "title": "Tjilla C150 ({device_name}) authenticatie mislukt",
+      "description": "De lokale sleutel werkt niet meer. Dit gebeurt soms na een firmware-update of factory reset.\n\nVerwijder de integratie en voeg hem opnieuw toe met een verse local_key uit de Tuya IoT developer console.",
+      "fix_flow": {
+        "step": {
+          "auth_failed": {
+            "title": "Bevestig",
+            "description": "Klik op 'Indienen' nadat je de integratie opnieuw hebt geconfigureerd."
+          }
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "battery": {
+        "name": "Batterij"
+      },
+      "clean_time": {
+        "name": "Reinigingstijd"
+      },
+      "clean_area": {
+        "name": "Gereinigd oppervlak"
+      },
+      "total_area": {
+        "name": "Totaal gereinigd"
+      },
+      "total_count": {
+        "name": "Totaal beurten"
+      },
+      "total_time": {
+        "name": "Totale reinigingstijd"
+      },
+      "edge_brush": {
+        "name": "Zijborstel resterend"
+      },
+      "roll_brush": {
+        "name": "Rolborstel resterend"
+      },
+      "filter": {
+        "name": "Filter resterend"
+      },
+      "duster": {
+        "name": "Dweildoek resterend"
+      },
+      "rooms": {
+        "name": "Bekende kamers"
+      },
+      "tuya_status": {
+        "name": "Status",
+        "state": {
+          "standby": "Stand-by",
+          "smart": "Reinigen (hele huis)",
+          "zone_clean": "Zone reinigen",
+          "part_clean": "Plekreiniging",
+          "cleaning": "Reinigen",
+          "paused": "Gepauzeerd",
+          "goto_pos": "Onderweg naar punt",
+          "pos_arrived": "Punt bereikt",
+          "pos_unarrive": "Punt onbereikbaar",
+          "goto_charge": "Onderweg naar dock",
+          "charging": "Opladen",
+          "charge_done": "Opgeladen",
+          "sleep": "Slaapt",
+          "select_room": "Kamerreiniging",
+          "seek_dust_bucket": "Zoekt leegstation",
+          "collecting_dust": "Stofbak legen",
+          "in_trouble": "Fout",
+          "remote_ctrl": "Handbediening"
+        }
+      }
+    },
+    "binary_sensor": {
+      "connection": {
+        "name": "Verbinding"
+      },
+      "fault": {
+        "name": "Fout"
+      },
+      "water_reservoir": {
+        "name": "Waterreservoir"
+      }
+    },
+    "switch": {
+      "do_not_disturb": {
+        "name": "Niet storen"
+      },
+      "break_clean": {
+        "name": "Doorgaan na onderbreking"
+      },
+      "auto_boost": {
+        "name": "Automatische tapijtboost"
+      },
+      "cruise": {
+        "name": "Cruise-modus"
+      },
+      "y_mop": {
+        "name": "Y-patroon dweilen"
+      },
+      "room_selected": {
+        "name": "Selecteer {room}"
+      }
+    },
+    "button": {
+      "reset_edge_brush": {
+        "name": "Zijborstel reset"
+      },
+      "reset_roll_brush": {
+        "name": "Rolborstel reset"
+      },
+      "reset_filter": {
+        "name": "Filter reset"
+      },
+      "reset_duster": {
+        "name": "Dweildoek reset"
+      },
+      "start_selected_rooms": {
+        "name": "Start kamerreiniging"
+      },
+      "clean_room": {
+        "name": "Reinig {room}"
+      }
+    },
+    "number": {
+      "volume": {
+        "name": "Volume"
+      }
+    },
+    "select": {
+      "suction": {
+        "name": "Zuigkracht"
+      },
+      "cistern": {
+        "name": "Dweilintensiteit"
+      },
+      "work_mode": {
+        "name": "Reinigingstype"
+      },
+      "room_selection": {
+        "name": "Kamerselectie"
+      }
+    }
+  }
+}

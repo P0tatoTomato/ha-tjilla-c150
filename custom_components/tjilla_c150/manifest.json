@@ -1,0 +1,20 @@
+{
+  "domain": "tjilla_c150",
+  "name": "Tjilla C150 Robotstofzuiger",
+  "version": "1.0.0",
+  "integration_type": "device",
+  "documentation": "https://github.com/P0tatoTomato/ha-tjilla-c150",
+  "issue_tracker": "https://github.com/P0tatoTomato/ha-tjilla-c150/issues",
+  "requirements": [
+    "tinytuya==1.19.0"
+  ],
+  "dependencies": [],
+  "codeowners": [
+    "@P0tatoTomato"
+  ],
+  "loggers": [
+    "tinytuya"
+  ],
+  "iot_class": "local_push",
+  "config_flow": true
+}

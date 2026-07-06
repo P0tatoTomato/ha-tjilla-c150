@@ -1,0 +1,70 @@
+clean_rooms:
+  name: Kamers reinigen
+  description: >
+    Selecteer één of meerdere kamers en start het reinigen.
+    Kamers kunnen als ID (1, 5, 7) of als naam ("Keuken", "Woonkamer") worden gegeven.
+  fields:
+    entity_id:
+      name: Stofzuiger
+      description: De Tjilla C150 vacuum entity
+      required: true
+      selector:
+        entity:
+          integration: tjilla_c150
+          domain: vacuum
+    rooms:
+      name: Kamers
+      description: >
+        Lijst van kamer IDs of namen. Voorbeelden: [Keuken, Woonkamer]
+        of [1, 7] of [Keuken, 5].
+      required: true
+      example: "[Keuken, Woonkamer]"
+      selector:
+        object:
+
+cancel_selection:
+  name: Kamerselectie annuleren
+  description: Annuleer de huidige kamer- of zoneselectie
+  fields:
+    entity_id:
+      name: Stofzuiger
+      required: true
+      selector:
+        entity:
+          integration: tjilla_c150
+          domain: vacuum
+
+# v3.4.0: `refresh_cloud_map` service verwijderd (cloud volledig weg).
+
+# v3.2.10: `break_clean` service verwijderd. Was gebaseerd op de misvatting
+# dat DP27 een momentary "onderbreek cleaning" commando was, terwijl het in
+# werkelijkheid een persistente setting is ("Continue after breaking point"
+# in de Tuya app; nu blootgesteld als switch "Doorgaan na onderbreking").
+# Voor het echt onderbreken van cleaning zonder dock-return: gebruik de
+# standaard `vacuum.pause` service — die zet DP2=True, wat de correcte
+# manier is.
+
+set_direction:
+  name: Handmatig sturen
+  description: >-
+    Stuur de stofzuiger handmatig in een richting. Gebruikt DP12 direction_control.
+    Vergelijkbaar met de joystick-modus in de Tuya app.
+  fields:
+    entity_id:
+      name: Stofzuiger
+      required: true
+      selector:
+        entity:
+          integration: tjilla_c150
+          domain: vacuum
+    direction:
+      name: Richting
+      required: true
+      selector:
+        select:
+          options:
+            - {value: forward, label: Vooruit}
+            - {value: backward, label: Achteruit}
+            - {value: turn_left, label: Linksom draaien}
+            - {value: turn_right, label: Rechtsom draaien}
+            - {value: stop, label: Stoppen}
