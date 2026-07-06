@@ -4,6 +4,14 @@ Alle noemenswaardige wijzigingen aan dit project worden in dit bestand
 gedocumenteerd. Het formaat volgt losjes [Keep a Changelog](https://keepachangelog.com),
 en het project gebruikt [Semantic Versioning](https://semver.org).
 
+
+## [1.0.1] — 2026-07-06
+
+### Gewijzigd
+- Optimistische status corrigeert zich sneller naar de werkelijke
+  robotstatus wanneer een commando niet wordt uitgevoerd
+  (auto-clear-venster van 10s naar 3s).
+
 ## [1.0.0] — Eerste publieke release
 
 ### Toegevoegd
