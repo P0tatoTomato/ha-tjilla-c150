@@ -1,7 +1,7 @@
 {
   "domain": "tjilla_c150",
   "name": "Tjilla C150 Robotstofzuiger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "integration_type": "device",
   "documentation": "https://github.com/P0tatoTomato/ha-tjilla-c150",
   "issue_tracker": "https://github.com/P0tatoTomato/ha-tjilla-c150/issues",
