@@ -17,6 +17,7 @@ from homeassistant.helpers.update_coordinator import (
 from .const import (
     DOMAIN,
     DEFAULT_SCAN_INTERVAL,
+    OPTIMISTIC_STATUS_CLEAR,
     ACTIVELY_CLEANING_STATES,
     STATUS_SMART,
     STATUS_SELECT_ROOM,
@@ -583,10 +584,13 @@ class TjillaC150Coordinator(DataUpdateCoordinator):
         dit was het gat in de optimistic updates — commando's zetten
         alleen hun eigen DP (bv. DP1=True), maar de kaart-status komt uit
         DP5, die pas via de push/poll bijtrok. De echte status overschrijft
-        deze aanname binnen ~1s (push) of uiterlijk 10s (auto-clear).
+        deze aanname binnen ~1s (echte push) of uiterlijk enkele seconden
+        (auto-clear), zodat een geweigerd commando niet lang blijft staan.
         """
         self._optimistic_dps[DP_STATUS] = status
-        self._optimistic_clear_at[DP_STATUS] = self.hass.loop.time() + 10
+        self._optimistic_clear_at[DP_STATUS] = (
+            self.hass.loop.time() + OPTIMISTIC_STATUS_CLEAR
+        )
         self._push_data_update()
 
     async def async_start(self) -> None:

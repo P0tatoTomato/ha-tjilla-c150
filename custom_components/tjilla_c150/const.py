@@ -8,6 +8,15 @@ DOMAIN = "tjilla_c150"
 DEFAULT_NAME = "Tjilla C150"
 DEFAULT_SCAN_INTERVAL = 15
 
+# Hoe lang een optimistisch gezette status (DP5) blijft staan voordat hij
+# automatisch wijkt voor de werkelijke robotwaarde. Kort gehouden zodat de
+# kaart zich snel corrigeert wanneer de robot een commando niet uitvoert
+# (bv. starten terwijl hij is opgetild): de UI reageert direct, maar toont
+# een onjuiste aanname hooguit enkele seconden. Andere optimistische
+# DP-writes gebruiken een langer venster omdat die hun eigen bevestigende
+# push krijgen; een geweigerde start levert juist géén nieuwe status-push.
+OPTIMISTIC_STATUS_CLEAR = 3.0
+
 # options-flow config key voor het aantal geconfigureerde kamers.
 # Per kamer worden room_id_<i> en room_name_<i> keys opgeslagen.
 CONF_ROOM_COUNT = "room_count"
